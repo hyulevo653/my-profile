@@ -2,7 +2,12 @@ import {AppConfig} from '@/config/app.config';
 import {FiMenu, FiShare} from 'react-icons/fi';
 import {OpenMenuButton, siderRef} from '@/components/Sider';
 
+import avatarImage from '../assets/image/IMG_20250925_193508.png';
+import verticalAvatar from '../assets/image/abc.png';
+
+
 export default function ProfileHeader() {
+  console.log(avatarImage);
   return <div className={'bg-white border-b'}>
     <div
       className={'h-[200px] bg-cover bg-center'}
@@ -17,7 +22,7 @@ export default function ProfileHeader() {
           <OpenMenuButton/>
           <div className={'md:px-4'}>
             <div className={'font-semibold'}>
-              Anh Nhan Nguyen
+              Duc Huy Nguyen
             </div>
             <div className={'text-[12px]'}>
               3 Posts, 25K Views
@@ -30,7 +35,7 @@ export default function ProfileHeader() {
       <div
         className={'overflow-hidden rounded-full w-[100px] h-[100px] bg-cover bg-center border-2 border-white -mt-[32px]'}
         style={{
-          backgroundImage: `url('${AppConfig.avatar}')`
+          backgroundImage: `url(${avatarImage.src})`
         }}
       />
       <div className={'pt-4'}>

@@ -11,7 +11,7 @@ export default function ProfilePosts() {
           <div
             className={'overflow-hidden rounded-full w-14 aspect-square bg-cover bg-center border-2 border-white'}
             style={{
-              backgroundImage: `url('${AppConfig.avatar}')`
+              backgroundImage: `url('${AppConfig.avatar.src}')`
             }}
           />
           <div className={'flex flex-col'}>

@@ -24,7 +24,7 @@ export default function ContactPage() {
         <div
           className={'w-full h-full absolute top-0 left-0 bg-cover bg-center grayscale z-0'}
           style={{
-            backgroundImage: `url('${AppConfig.verticalAvatar}')`
+            backgroundImage: `url('${AppConfig.verticalAvatar.src}')`
           }}
         />
         <div
@@ -36,7 +36,7 @@ export default function ContactPage() {
             <div className={'text-black font-black text-4xl text-center'}>
               Can we talk about your idea?
             </div>
-            <a href={'https://t.me/delimister'}
+            <a href={'https://t.me/huynd653'}
                className={'bg-black text-white font-medium text-center py-4 px-8 rounded-full mt-12 text-xl transition-all cursor-pointer duration-300 hover:bg-white hover:text-black hover:shadow-lg flex flex-row gap-2 items-center'}>
               <FiMessageCircle/>
               Message Me

@@ -13,16 +13,70 @@ function ProjectItem({project}: {project: any}) {
 
   useEffect(() => {
     if (showReadme && !readmeLoaded) {
-      try {
-        fetch(project.url + '/readme').then(r => r.json()).then(r => {
-          console.log(r);
-          setReadme(r.content ? atob(r.content) : 'No readme provided.');
-        });
-      } catch (e) {
+      const loadReadme = async () => {
+        try {
+          const res = await fetch(project.url + '/readme');
+          const data = await res.json();
+          console.log('readme meta:', data);
 
-      } finally {
-        setReadmeLoaded(true);
-      }
+          // Prefer raw download_url if provided (avoids base64 decoding)
+          if (data.download_url) {
+            try {
+              // Do a HEAD request to check Content-Length before downloading large files
+              let sizeOk = true;
+              try {
+                const head = await fetch(data.download_url, { method: 'HEAD' });
+                const len = head.headers.get('content-length');
+                if (len && Number(len) > 500 * 1024) { // 500 KB limit
+                  setReadme('Readme content is too large to display');
+                  sizeOk = false;
+                }
+              } catch (headErr) {
+                // If HEAD fails, we'll still try but protect with a hard character limit after download
+                console.warn('HEAD request failed for readme download_url, falling back to small-size guard', headErr);
+              }
+
+              if (sizeOk) {
+                const txtRes = await fetch(data.download_url);
+                if (!txtRes.ok) {
+                  setReadme('Error fetching readme');
+                } else {
+                  const text = await txtRes.text();
+                  if (text.length > 2 * 1024 * 1024) { // extra guard: 2MB after decode
+                    setReadme('Readme content is too large to display');
+                  } else {
+                    setReadme(text || 'No readme provided.');
+                  }
+                }
+              }
+            } catch (dlErr) {
+              console.error('Error downloading readme via download_url:', dlErr);
+              setReadme('Error loading readme');
+            }
+          } else if (data.content) {
+            // Fallback: GitHub API returned base64 content. Guard by encoded length first.
+            if (data.content.length > 10 * 1024 * 1024) { // encoded size > 10MB
+              setReadme('Readme content is too large to display');
+            } else {
+              try {
+                setReadme(atob(data.content));
+              } catch (decErr) {
+                console.error('Error decoding base64 readme:', decErr);
+                setReadme('Error loading readme: invalid content');
+              }
+            }
+          } else {
+            setReadme('No readme provided.');
+          }
+        } catch (err) {
+          console.error('Failed to load readme:', err);
+          setReadme('Error loading readme');
+        } finally {
+          setReadmeLoaded(true);
+        }
+      };
+
+      loadReadme();
     }
   }, [showReadme]);
 
