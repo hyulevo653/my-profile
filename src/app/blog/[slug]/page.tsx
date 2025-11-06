@@ -94,7 +94,7 @@ export default async function PostContent({params}: PostContentProps) {
     >
       {post.content}
     </Markdown>
-    {AppConfig.giscusEnabled && (
+    {/* {AppConfig.giscusEnabled && (
       <>
         <div className={'border-t bg-white p-4'}>
           <div className={'giscus'}></div>
@@ -115,6 +115,6 @@ export default async function PostContent({params}: PostContentProps) {
           async
         />
       </>
-    )}
+    )} */}
   </AppLayout>;
 }
