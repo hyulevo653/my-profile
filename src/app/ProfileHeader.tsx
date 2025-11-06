@@ -3,7 +3,6 @@ import {FiMenu, FiShare} from 'react-icons/fi';
 import {OpenMenuButton, siderRef} from '@/components/Sider';
 
 import avatarImage from '../assets/image/IMG_20250925_193508.png';
-import verticalAvatar from '../assets/image/abc.png';
 
 
 export default function ProfileHeader() {
