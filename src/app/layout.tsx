@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: `${AppConfig.name}'s Profile`,
   description: `${AppConfig.name}'s online profile`,
   openGraph: {
-    images: AppConfig.avatar,
+    images: AppConfig.avatar.src,
   },
 };
 
