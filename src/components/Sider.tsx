@@ -1,5 +1,5 @@
 'use client';
-import {FiHome, FiMenu, FiSend, FiUser} from 'react-icons/fi';
+import {FiHome, FiLayout, FiMenu, FiSend, FiUser} from 'react-icons/fi';
 import {AppConfig} from '@/config/app.config';
 import {IconButton} from '@/components/SiderIconButton';
 import {createRef, useImperativeHandle, useState} from 'react';
@@ -56,6 +56,11 @@ export default function Sider() {
           icon={FiSend}
           label={'Contact me'}
           url={'/contact'}
+        />
+        <IconButton
+          icon={FiLayout}
+          label={'My CV'}
+          url={'/my-cv'}
         />
       </div>
       <div className={'flex flex-col gap-2'}>
