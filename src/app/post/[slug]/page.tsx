@@ -305,7 +305,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <main className="min-h-screen bg-slate-950 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Post not found</h1>
-          <Link href="/blog" className="text-cyan-400 hover:text-cyan-300">
+          <Link href="/posts" className="text-cyan-400 hover:text-cyan-300">
             Back to Blog
           </Link>
         </div>
@@ -321,7 +321,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       {/* Header */}
       <header className="w-full py-8 bg-slate-900 border-b border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <Link href="/blog" className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+          <Link href="/posts" className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
             <FiArrowLeft size={20} />
             Back to Blog
           </Link>

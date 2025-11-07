@@ -1,5 +1,5 @@
 'use client';
-import { FiBookOpen, FiHome, FiLayout, FiMenu, FiSend, FiUser } from 'react-icons/fi';
+import { FiBookOpen, FiHome, FiLayout, FiMenu, FiSend, FiUser, FiUserCheck } from 'react-icons/fi';
 import { AppConfig } from '@/config/app.config';
 import { IconButton } from '@/components/SiderIconButton';
 import { createRef, useImperativeHandle, useState } from 'react';
@@ -51,6 +51,11 @@ export default function Sider() {
           icon={FiHome}
           label={'Home'}
           url={'/'}
+        />
+        <IconButton
+          icon={FiUserCheck}
+          label={'About me'}
+          url={'/about'}
         />
         <IconButton
           icon={FiSend}
