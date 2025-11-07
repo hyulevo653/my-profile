@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import { FiArrowRight, FiCalendar, FiClock, FiArrowLeft } from "react-icons/fi"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { SocialShare } from "@/components/social-share"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const blogPostsData: Record<
   string,
@@ -296,9 +296,9 @@ Node.js and Express make building scalable REST APIs accessible and enjoyable.
 
 const allPosts = Object.values(blogPostsData)
 
-export default function PostPage({ params }: { params: { slug: string } }) {
-  const post = blogPostsData[params.slug]
-  const currentUrl = typeof window !== "undefined" ? window.location.href : ""
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post = blogPostsData[slug]
 
   if (!post) {
     return (
@@ -314,6 +314,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   }
 
   const relatedPosts = post.relatedPostIds.map((id) => allPosts.find((p) => p.id === id)).filter(Boolean)
+  const currentUrl = `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/post/${slug}`
 
   return (
     <main className="min-h-screen bg-slate-950">
