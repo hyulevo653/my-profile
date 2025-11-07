@@ -9,6 +9,7 @@ export default function ProfileSubscriptions() {
     <div className={'flex flex-col gap-2 mt-4'}>
       {AppConfig.subscriptions.map(sub => (
         <a
+          key={sub.name}
           href={'/contact'}
           className={cn(
             'flex flex-row justify-between bg-primary cursor-pointer text-white px-5 py-3 rounded-full font-semibold text-[14px]',
