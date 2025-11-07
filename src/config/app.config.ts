@@ -12,11 +12,12 @@ export const AppConfig = {
   imageCV: myCVimage,
   email: "duchuy653201@gmail.com",
   phone: "0916498603",
-  dob: "06/05/2001",
+  dob: "06/05",
   github: "https://github.com/hyulevo653",
   introduction: `2+ years experience in software development.\n` +
-    `Working in scalable and high-performance technology systems.\n` +
-    `Web Development, Mobile Development, DevOps & more.`,
+    `Implementing optimized user interface (UI/UX) designs to provide the best user experience.\n` +
+    `Building scalable and high-performance web applications.\n` +
+    `Web Development, Mobile Development & more.`,
   summary:
     "I have 2 years of experience working on web projects, mainly focusing on frontend development, with occasional involvement in backend tasks when needed.",
     
@@ -113,7 +114,7 @@ export const AppConfig = {
     {
       name: "Full Stack",
       icon: FiBriefcase,
-      description: "NodeJS, Loopback backend. Experience with MySQL, Docker, and Kubernetes deployment.",
+      description: "NodeJS, Loopback,Java backend. Experience with MySQL, Docker, and Kubernetes deployment.",
     },
   ],
   giscusEnabled: true,
