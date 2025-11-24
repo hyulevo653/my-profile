@@ -62,11 +62,11 @@ export default function Sider() {
           label={'Contact me'}
           url={'/contact'}
         />
-        <IconButton
+        {/* <IconButton
           icon={FiLayout}
           label={'My CV'}
           url={'/my-cv'}
-        />
+        /> */}
         <IconButton
           icon={FiBookOpen}
           label={'My Post'}
