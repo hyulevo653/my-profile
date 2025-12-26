@@ -24,7 +24,7 @@ export const AppConfig = {
     {
       company: "FPT Software",
       position: "Backend Developer (Intern)",
-      duration: "02/2023 - 05/2024",
+      duration: "02/2023 - 05/2023",
       projects: [
         {
           name: "Requirement Validation System",
