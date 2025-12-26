@@ -41,7 +41,7 @@ export default function AboutPage() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8">Skills & Technologies</h2>
 
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
               {Object.entries(AppConfig.skills).map(([category, items]) => (
                 <div key={category} className="p-6 rounded-lg bg-slate-900/50 border border-slate-800">
@@ -64,79 +64,91 @@ export default function AboutPage() {
             </div>
           </div>
 
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Work Experience</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
-          </div>
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-white mb-6">Work Experience</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
+            </div>
 
-          <div className="space-y-12">
-            {AppConfig.experiences.map((exp, expIdx) => (
-              <div key={expIdx} className="border-l-2 border-cyan-500/30 pl-8 relative">
-                <div className="absolute -left-4 top-2 w-6 h-6 bg-cyan-500 rounded-full border-4 border-slate-950"></div>
+            <div className="space-y-12">
+              {AppConfig.experiences.map((exp, expIdx) => (
+                <div key={expIdx} className="border-l-2 border-cyan-500/30 pl-8 relative">
+                  <div className="absolute -left-4 top-2 w-6 h-6 bg-cyan-500 rounded-full border-4 border-slate-950"></div>
 
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold text-white">{exp.company}</h3>
-                  <p className="text-cyan-400 font-semibold">{exp.position}</p>
-                  <p className="text-gray-400 text-sm">{exp.duration}</p>
-                </div>
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-white">{exp.company}</h3>
+                    <p className="text-cyan-400 font-semibold">{exp.position}</p>
+                    <p className="text-gray-400 text-sm">{exp.duration}</p>
+                  </div>
 
-                <div className="space-y-6">
-                  {exp.projects.map((project, projIdx) => (
-                    <div
-                      key={projIdx}
-                      className="bg-slate-900/50 rounded-lg p-6 border border-slate-800 hover:border-cyan-500/30 transition-colors"
-                    >
-                      <h4 className="text-xl font-bold text-white mb-2">{project.name}</h4>
-                      <p className="text-gray-300 mb-4">{project.description}</p>
+                  <div className="space-y-6">
+                    {exp.projects.map((project, projIdx) => (
+                      <div
+                        key={projIdx}
+                        className="bg-slate-900/50 rounded-lg p-6 border border-slate-800 hover:border-cyan-500/30 transition-colors"
+                      >
+                        <h4 className="text-xl font-bold text-white mb-2">{project.name}</h4>
+                        <p className="text-gray-300 mb-4">{project.description}</p>
 
-                      <div className="mb-4">
-                        <p className="text-sm font-semibold text-gray-400 mb-2">Tech Stack:</p>
-                        <div className="flex flex-wrap gap-2">
-                          {project.techStack.map((tech, idx) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-xs font-medium"
-                            >
-                              {tech}
-                            </span>
-                          ))}
+                        <div className="mb-4">
+                          <p className="text-sm font-semibold text-gray-400 mb-2">Tech Stack:</p>
+                          <div className="flex flex-wrap gap-2">
+                            {project.techStack.map((tech, idx) => (
+                              <span
+                                key={idx}
+                                className="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-xs font-medium"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <p className="text-sm font-semibold text-gray-400 mb-2">Responsibilities:</p>
+                          <ul className="space-y-2">
+                            {project.responsibilities.map((resp, idx) => (
+                              <li key={idx} className="flex gap-3 text-gray-300 text-sm">
+                                <FiCheck size={16} className="text-cyan-400 flex-shrink-0 mt-0.5" />
+                                <span>{resp}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
-
-                      <div>
-                        <p className="text-sm font-semibold text-gray-400 mb-2">Responsibilities:</p>
-                        <ul className="space-y-2">
-                          {project.responsibilities.map((resp, idx) => (
-                            <li key={idx} className="flex gap-3 text-gray-300 text-sm">
-                              <FiCheck size={16} className="text-cyan-400 flex-shrink-0 mt-0.5" />
-                              <span>{resp}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
           {/* Education */}
           <div className="mb-16 mt-16">
             <h2 className="text-3xl font-bold text-white mb-8">Education</h2>
             <div className="space-y-6">
               {AppConfig.education.map((edu, idx) => (
-                <div key={idx} className="p-6 rounded-lg bg-slate-900/50 border border-slate-800">
-                  <h3 className="text-xl font-bold text-white">{edu.degree}</h3>
-                  <p className="text-cyan-400 font-semibold">{edu.school}</p>
-                  <p className="text-gray-400 text-sm mt-2">{edu.duration}</p>
-                </div>
+                <a
+                  key={idx}
+                  href={edu.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-6 rounded-xl bg-gradient-to-br from-slate-900/50 to-slate-800/50 border border-slate-800 hover:border-cyan-500/50 hover:bg-gradient-to-br hover:from-cyan-500/5 hover:to-slate-900/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10 group"
+                >
+                  <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+                    {edu.degree}
+                  </h3>
+                  <p className="text-xl font-semibold text-cyan-400 mb-3 group-hover:text-cyan-300 transition-colors">
+                    {edu.school}
+                  </p>
+                  <p className="text-gray-400 text-base bg-slate-800/50 px-4 py-2 rounded-lg inline-block hover:bg-slate-700/50 transition-colors">
+                    {edu.duration}
+                  </p>
+                  <div className="absolute inset-0 rounded-xl ring-2 ring-transparent group-hover:ring-cyan-500/30 transition-all duration-300" />
+                </a>
               ))}
             </div>
           </div>
-
           {/* CTA */}
           <div className="p-8 rounded-lg bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 text-center">
             <h3 className="text-2xl font-bold text-white mb-4">Interested in working together?</h3>
@@ -151,7 +163,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      
+
 
       {/* Footer */}
       <footer className="w-full py-12 bg-slate-950 border-t border-slate-800">

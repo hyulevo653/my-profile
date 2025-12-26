@@ -140,15 +140,16 @@ export const AppConfig = {
   education: [
     {
       school: "Electric Power University",
-      degree: "Information Technology",
+      degree: "Information Technology Engineer",
       duration: "09/2019 - 06/2024",
+      link: "https://epu.edu.vn/trang/gioi-thieu-2126.html",
     },
   ],
 
   skills: {
     languages: ["JavaScript (ES5, ES6+)", "TypeScript", "HTML", "CSS", "Java"],
 
-    frontend: ["Angular", "React", "Next.js"],
+    frontend: ["Angular", "React", "Next"],
 
     backend: ["Node.js", "Spring Boot", "LoopBack", "REST API"],
 
