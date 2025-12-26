@@ -63,7 +63,7 @@ export const AppConfig = {
     },
     {
       company: "VSII",
-      position: "Frontend Developer",
+      position: "Fullstack Developer",
       duration: "08/2024 - 11/2025",
       projects: [
         {
@@ -149,7 +149,7 @@ export const AppConfig = {
   skills: {
     languages: ["JavaScript (ES5, ES6+)", "TypeScript", "HTML", "CSS", "Java"],
 
-    frontend: ["Angular", "React", "Next"],
+    frontend: ["Angular", "React", "Next.js"],
 
     backend: ["Node.js", "Spring Boot", "LoopBack", "REST API"],
 
