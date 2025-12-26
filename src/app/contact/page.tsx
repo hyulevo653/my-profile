@@ -3,6 +3,7 @@ import {FiArrowLeft, FiMessageCircle} from 'react-icons/fi';
 import {AppConfig} from '@/config/app.config';
 import {Metadata} from 'next';
 import {OpenMenuButton} from '@/components/Sider';
+import { index } from 'd3';
 
 
 export const metadata: Metadata = {
@@ -53,8 +54,8 @@ export default function ContactPage() {
         </div>
         <div className={'py-4'}>
           <div className={'space-y-4'}>
-            {AppConfig.expertises.map(expertise => (
-              <div className={'bg-neutral-100 p-4 rounded-lg group'}>
+            {AppConfig.expertises.map((expertise, index) => (
+              <div key={index} className={'bg-neutral-100 p-4 rounded-lg group'}>
                 <div className={'font-medium flex flex-row items-center gap-2'}>
                   {expertise.icon({})}
                   {expertise.name}
