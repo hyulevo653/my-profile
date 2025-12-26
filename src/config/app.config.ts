@@ -19,8 +19,8 @@ export const AppConfig = {
     `Building scalable and high-performance web applications.\n` +
     `Web Development, Mobile Development & more.`,
   summary:
-    "I have 2 years of experience working on web projects, mainly focusing on frontend development, with occasional involvement in backend tasks when needed.",
-    
+    "I have more than 2 years of experience working on web projects, mainly focusing on frontend development, with occasional involvement in backend tasks when needed.",
+
   experiences: [
     {
       company: "CNTT JSC",
@@ -49,9 +49,7 @@ export const AppConfig = {
           name: "Authgateone",
           description: "A platform for Single Sign-On (SSO) management and online payment processing.",
           techStack: [
-            "ReactJS",
-            "NextJS",
-            "AngularJS",
+            "Angular",
             "NodeJS",
             "Loopback",
             "Material UI",
@@ -66,6 +64,52 @@ export const AppConfig = {
             "Built a responsive landing page for Authgateone using React",
             "Implemented CRUD functionalities for core modules (App, SettingApp, Client, Order, Contact Us)",
             "Contributed to feature logic and workflow design during product development",
+          ],
+        },
+        {
+          name: "TraxemQR",
+          description: "A QR code-based attendance management system for employees.",
+          techStack: [
+            "ReactJS",
+            "NodeJS",
+            "Loopback",
+            "MySQL",
+            "Docker",
+            "Kubernetes",
+          ],
+          responsibilities: [
+            "Developed and maintained the QR code generation web application using ReactJS",
+            "Implemented free QR code creation features including URL, text, and custom data",
+            "Built user-friendly interfaces for creating, previewing, and downloading QR codes",
+            "Integrated backend APIs for QR generation, storage, and management using NodeJS & Loopback",
+            "Optimized performance and ensured cross-browser compatibility",
+          ]
+        },
+      ],
+    },
+    {
+      company: "Viettel AI",
+      position: "Frontend Developer",
+      duration: "11/2024 - now",
+      projects: [
+        {
+          name: "Smart Bot",
+          description: "A platform for Single Sign-On (SSO) management and online payment processing.",
+          techStack: [
+            "Angular",
+            "AI / LLM Integration",
+            "Java Spring Boot",
+            "NG-Zorro",
+            "WebSocket",
+            "RabbitMQ",
+            "Docker",
+          ],
+          responsibilities: [
+            "Developed a bot management dashboard to configure and control multiple bot accounts across platforms",
+            "Implemented features to create, edit, and manage bot configurations and execution schedules",
+            "Integrated APIs for connecting and managing bot accounts on Facebook, TikTok, Reddit, and other platforms",
+            "Built monitoring tools to track bot status, logs, and execution results in real-time",
+            "Collaborated in designing workflows and system logic for scalable bot operations",
           ],
         },
       ],
@@ -104,7 +148,7 @@ export const AppConfig = {
     url: 'https://facebook.com/hyu.levo.666',
     icon: FiFacebook
   }],
-   expertises: [
+  expertises: [
     {
       name: "Frontend Development",
       icon: FiCode,

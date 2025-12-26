@@ -36,7 +36,7 @@ export default function ContactPage() {
             <div className={'text-black font-black text-4xl text-center'}>
               Can we talk about your idea?
             </div>
-            <a href={'https://t.me/huynd653'}
+            <a href={'https://t.me/hyulevo666'} target={'_blank'}
                className={'bg-black text-white font-medium text-center py-4 px-8 rounded-full mt-12 text-xl transition-all cursor-pointer duration-300 hover:bg-white hover:text-black hover:shadow-lg flex flex-row gap-2 items-center'}>
               <FiMessageCircle/>
               Message Me
