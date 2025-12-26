@@ -64,8 +64,67 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Education */}
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
+            <h2 className="text-3xl font-bold text-white mb-6">Work Experience</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
+          </div>
+
+          <div className="space-y-12">
+            {AppConfig.experiences.map((exp, expIdx) => (
+              <div key={expIdx} className="border-l-2 border-cyan-500/30 pl-8 relative">
+                <div className="absolute -left-4 top-2 w-6 h-6 bg-cyan-500 rounded-full border-4 border-slate-950"></div>
+
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold text-white">{exp.company}</h3>
+                  <p className="text-cyan-400 font-semibold">{exp.position}</p>
+                  <p className="text-gray-400 text-sm">{exp.duration}</p>
+                </div>
+
+                <div className="space-y-6">
+                  {exp.projects.map((project, projIdx) => (
+                    <div
+                      key={projIdx}
+                      className="bg-slate-900/50 rounded-lg p-6 border border-slate-800 hover:border-cyan-500/30 transition-colors"
+                    >
+                      <h4 className="text-xl font-bold text-white mb-2">{project.name}</h4>
+                      <p className="text-gray-300 mb-4">{project.description}</p>
+
+                      <div className="mb-4">
+                        <p className="text-sm font-semibold text-gray-400 mb-2">Tech Stack:</p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.techStack.map((tech, idx) => (
+                            <span
+                              key={idx}
+                              className="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-xs font-medium"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <p className="text-sm font-semibold text-gray-400 mb-2">Responsibilities:</p>
+                        <ul className="space-y-2">
+                          {project.responsibilities.map((resp, idx) => (
+                            <li key={idx} className="flex gap-3 text-gray-300 text-sm">
+                              <FiCheck size={16} className="text-cyan-400 flex-shrink-0 mt-0.5" />
+                              <span>{resp}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+          {/* Education */}
+          <div className="mb-16 mt-16">
             <h2 className="text-3xl font-bold text-white mb-8">Education</h2>
             <div className="space-y-6">
               {AppConfig.education.map((edu, idx) => (
@@ -92,6 +151,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      
 
       {/* Footer */}
       <footer className="w-full py-12 bg-slate-950 border-t border-slate-800">
