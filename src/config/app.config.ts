@@ -20,7 +20,6 @@ export const AppConfig = {
     `Web Development, Mobile Development & more.`,
   summary:
     "I have more than 2 years of experience working on web projects, mainly focusing on frontend development, with occasional involvement in backend tasks when needed.",
-
   experiences: [
     {
       company: "CNTT JSC",
@@ -125,11 +124,19 @@ export const AppConfig = {
   ],
 
   skills: {
-    languages: ["JavaScript (ES5, ES6+)", "TypeScript", "HTML", "CSS"],
-    frameworks: ["ReactJS", "Angular", "NextJS"],
-    styling: ["Bootstrap", "Tailwind", "SCSS", "CSS Module"],
-    backend: ["NodeJS", "Loopback", "MySQL"],
-    other: ["Docker", "English: Good (Writing & Reading)"],
+    languages: ["JavaScript (ES5, ES6+)", "TypeScript", "HTML", "CSS", "Java"],
+
+    frontend: ["Angular", "React", "Next.js"],
+
+    backend: ["Node.js", "Spring Boot", "LoopBack", "REST API"],
+
+    styling: ["Bootstrap", "Tailwind CSS", "SCSS", "CSS Modules"],
+
+    database: ["MySQL","PostgreSQL"],
+
+    devops: ["Docker"],
+
+    other: ["English: Good (Reading & Writing)"],
   },
   subscriptions: [{
     name: "Hire Me",

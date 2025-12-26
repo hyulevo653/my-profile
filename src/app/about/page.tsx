@@ -27,8 +27,8 @@ export default function AboutPage() {
           <div className="mb-16 p-8 rounded-lg bg-slate-900/50 border border-slate-800">
             <h2 className="text-3xl font-bold text-white mb-6">My Journey</h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              I'm {AppConfig.name}, a {AppConfig.title} with {AppConfig.summary.split(" ")[0]} years of experience. I'm
-              passionate about building beautiful, performant web applications that solve real-world problems.
+              I'm {AppConfig.name}, a {AppConfig.title}.
+              {AppConfig.summary}
             </p>
             <p className="text-gray-300 text-lg leading-relaxed">
               My journey into web development started with a curiosity about how things work on the internet. Over the
@@ -40,17 +40,25 @@ export default function AboutPage() {
           {/* Skills Overview */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8">Skills & Technologies</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {Object.entries(AppConfig.skills).map(([category, items]) => (
-                <div key={category} className="p-6 rounded-lg bg-slate-900/50 border border-slate-800">
-                  <h3 className="text-lg font-bold text-white capitalize mb-4">
+                <div
+                  key={category}
+                  className="p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors"
+                >
+                  <h3 className="text-xl font-bold text-cyan-400 mb-5 capitalize">
                     {category.replace(/([A-Z])/g, " $1").trim()}
                   </h3>
-                  <ul className="space-y-2">
-                    {items.slice(0, 4).map((skill, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-gray-300">
-                        <FiCheck size={16} className="text-cyan-400 flex-shrink-0" />
-                        <span className="text-sm">{skill}</span>
+
+                  <ul className="space-y-3">
+                    {items.map((skill, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center gap-3 text-gray-300"
+                      >
+                        <FiCheck size={16} className="text-cyan-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-base">{skill}</span>
                       </li>
                     ))}
                   </ul>
