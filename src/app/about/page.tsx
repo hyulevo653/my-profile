@@ -41,24 +41,21 @@ export default function AboutPage() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8">Skills & Technologies</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
               {Object.entries(AppConfig.skills).map(([category, items]) => (
-                <div
-                  key={category}
-                  className="p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors"
-                >
-                  <h3 className="text-xl font-bold text-cyan-400 mb-5 capitalize">
+                <div key={category} className="p-6 rounded-lg bg-slate-900/50 border border-slate-800">
+                  <h3 className="text-lg font-bold text-white capitalize mb-4">
+
+
+
                     {category.replace(/([A-Z])/g, " $1").trim()}
                   </h3>
-
-                  <ul className="space-y-3">
-                    {items.map((skill, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-center gap-3 text-gray-300"
-                      >
-                        <FiCheck size={16} className="text-cyan-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-base">{skill}</span>
+                  <ul className="space-y-2">
+                    {items.slice(0, 4).map((skill, idx) => (
+                      <li key={idx} className="flex items-center gap-3 text-gray-300">
+                        <FiCheck size={16} className="text-cyan-400 flex-shrink-0" />
+                        <span className="text-sm">{skill}</span>
                       </li>
                     ))}
                   </ul>
@@ -86,7 +83,7 @@ export default function AboutPage() {
             <h3 className="text-2xl font-bold text-white mb-4">Interested in working together?</h3>
             <p className="text-gray-300 mb-6">Let's discuss your project and see how I can help.</p>
             <Link
-              href="/contacts"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-3 bg-cyan-500 text-slate-900 rounded-lg font-semibold hover:bg-cyan-400 transition-all duration-300"
             >
               Get in Touch
