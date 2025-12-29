@@ -115,7 +115,8 @@ export const AppConfig = {
       projects: [
         {
           name: "Smart Bot",
-          description: "A platform for Single Sign-On (SSO) management and online payment processing.",
+          description:
+      "A centralized platform for managing and operating automation bots across multiple social media platforms, enabling account management, scenario-based execution, AI-generated content, and real-time notifications.",
           techStack: [
             "Angular",
             "AI / LLM Integration",
