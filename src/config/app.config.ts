@@ -22,41 +22,29 @@ export const AppConfig = {
     "I have more than 2 years of experience working on web projects, mainly focusing on frontend development, with occasional involvement in backend tasks when needed.",
   experiences: [
     {
-      company: "FPT Software",
-      position: "Backend Developer (Intern)",
-      duration: "02/2023 - 05/2023",
-      projects: [
-        {
-          name: "Requirement Validation System",
-          description:
-            "An internal system developed for a Japanese client to validate and process business requirements provided in Excel files. The system automatically checks data consistency, business rules, and format correctness before importing requirements into the main system, helping reduce manual errors and improve efficiency.",
-          techStack: ["Node.js", "JavaScript", "MySQL", "ExcelJS", "RESTful API"],
-          responsibilities: [
-            "Developed backend services using Node.js and JavaScript to process and validate requirement data from Excel files",
-            "Implemented multiple validation functions to check business rules, data types, mandatory fields, and cross-sheet consistency",
-            "Parsed and transformed Excel data into structured JSON format for further processing",
-            "Handled edge cases such as missing columns, invalid formats, duplicated records, and incorrect references between sheets",
-            "Worked closely with Japanese stakeholders to clarify requirements and adjust validation logic based on Excel specifications",
-            "Optimized validation logic to handle large Excel files efficiently",
-            "Wrote reusable utility functions to improve maintainability and reduce duplicated logic"
-          ],
-        }
-      ],
-    },
-    {
-      company: "CNTT JSC",
+      company: "Viettel AI",
       position: "Frontend Developer",
-      duration: "05/2023 - 03/2024",
+      duration: "11/2024 - now",
       projects: [
         {
-          name: "Ibuilding Management System",
+          name: "Smart Bot",
           description:
-            "A web-based platform designed to manage residential complexes efficiently. The system allows administrators to manage buildings, floors, rooms, parking cards, residents, and announcements in one centralized dashboard.",
-          techStack: ["Angular", "SCSS", "RESTful API", "Bootstrap", "CSS Module", "MySQL"],
+      "A centralized platform for managing and operating automation bots across multiple social media platforms, enabling account management, scenario-based execution, AI-generated content, and real-time notifications.",
+          techStack: [
+            "Angular",
+            "AI / LLM Integration",
+            "Java Spring Boot",
+            "NG-Zorro",
+            "WebSocket",
+            "RabbitMQ",
+            "Docker",
+          ],
           responsibilities: [
-            "Building, developing and deploying web applications using Angular framework",
-            "Implementing optimized user interface (UI/UX) designs to provide the best user experience",
-            "Contributed to continuous improvement of software through teamwork with development team",
+            "Developed a bot management dashboard to configure and control multiple bot accounts across platforms",
+            "Implemented features to create, edit, and manage bot configurations and execution schedules",
+            "Integrated APIs for connecting and managing bot accounts on Facebook, TikTok, Reddit, and other platforms",
+            "Built monitoring tools to track bot status, logs, and execution results in real-time",
+            "Collaborated in designing workflows and system logic for scalable bot operations",
           ],
         },
       ],
@@ -109,31 +97,43 @@ export const AppConfig = {
       ],
     },
     {
-      company: "Viettel AI",
+      company: "CNTT JSC",
       position: "Frontend Developer",
-      duration: "11/2024 - now",
+      duration: "05/2023 - 03/2024",
       projects: [
         {
-          name: "Smart Bot",
+          name: "Ibuilding Management System",
           description:
-      "A centralized platform for managing and operating automation bots across multiple social media platforms, enabling account management, scenario-based execution, AI-generated content, and real-time notifications.",
-          techStack: [
-            "Angular",
-            "AI / LLM Integration",
-            "Java Spring Boot",
-            "NG-Zorro",
-            "WebSocket",
-            "RabbitMQ",
-            "Docker",
-          ],
+            "A web-based platform designed to manage residential complexes efficiently. The system allows administrators to manage buildings, floors, rooms, parking cards, residents, and announcements in one centralized dashboard.",
+          techStack: ["Angular", "SCSS", "RESTful API", "Bootstrap", "CSS Module", "MySQL"],
           responsibilities: [
-            "Developed a bot management dashboard to configure and control multiple bot accounts across platforms",
-            "Implemented features to create, edit, and manage bot configurations and execution schedules",
-            "Integrated APIs for connecting and managing bot accounts on Facebook, TikTok, Reddit, and other platforms",
-            "Built monitoring tools to track bot status, logs, and execution results in real-time",
-            "Collaborated in designing workflows and system logic for scalable bot operations",
+            "Building, developing and deploying web applications using Angular framework",
+            "Implementing optimized user interface (UI/UX) designs to provide the best user experience",
+            "Contributed to continuous improvement of software through teamwork with development team",
           ],
         },
+      ],
+    },
+    {
+      company: "FPT Software",
+      position: "Backend Developer (Intern)",
+      duration: "02/2023 - 05/2023",
+      projects: [
+        {
+          name: "Requirement Validation System",
+          description:
+            "An internal system developed for a Japanese client to validate and process business requirements provided in Excel files. The system automatically checks data consistency, business rules, and format correctness before importing requirements into the main system, helping reduce manual errors and improve efficiency.",
+          techStack: ["Node.js", "JavaScript", "MySQL", "ExcelJS", "RESTful API"],
+          responsibilities: [
+            "Developed backend services using Node.js and JavaScript to process and validate requirement data from Excel files",
+            "Implemented multiple validation functions to check business rules, data types, mandatory fields, and cross-sheet consistency",
+            "Parsed and transformed Excel data into structured JSON format for further processing",
+            "Handled edge cases such as missing columns, invalid formats, duplicated records, and incorrect references between sheets",
+            "Worked closely with Japanese stakeholders to clarify requirements and adjust validation logic based on Excel specifications",
+            "Optimized validation logic to handle large Excel files efficiently",
+            "Wrote reusable utility functions to improve maintainability and reduce duplicated logic"
+          ],
+        }
       ],
     },
   ],
