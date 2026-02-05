@@ -1,5 +1,5 @@
 'use client';
-import { FiBookOpen, FiDribbble, FiHome, FiLayout, FiMenu, FiSend, FiUser, FiUserCheck } from 'react-icons/fi';
+import { FiBookOpen, FiDribbble, FiHome, FiLayout, FiMenu, FiSend, FiUser, FiUserCheck, FiImage, FiBarChart2, FiMessageSquare } from 'react-icons/fi';
 import { AppConfig } from '@/config/app.config';
 import { IconButton } from '@/components/SiderIconButton';
 import { createRef, useImperativeHandle, useState } from 'react';
@@ -76,6 +76,21 @@ export default function Sider() {
           icon={FiDribbble}
           label={'My Graphic'}
           url={'/graphic'}
+        />
+        <IconButton
+          icon={FiImage}
+          label={'Gallery'}
+          url={'/gallery'}
+        />
+        <IconButton
+          icon={FiBarChart2}
+          label={'Analytics'}
+          url={'/analytics'}
+        />
+        <IconButton
+          icon={FiMessageSquare}
+          label={'Messages'}
+          url={'/chat'}
         />
       </div>
       <div className={'flex flex-col gap-2'}>
