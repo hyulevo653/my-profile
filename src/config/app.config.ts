@@ -176,7 +176,7 @@ export const AppConfig = {
     icon: FiGithub
   }, {
     name: 'Facebook',
-    url: 'https://facebook.com/huy.duc.398',
+    url: 'https://facebook.com/huy.duc.651',
     icon: FiFacebook
   }],
   expertises: [
