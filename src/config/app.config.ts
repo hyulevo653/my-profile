@@ -194,9 +194,9 @@ export const AppConfig = {
   ],
   giscus: {
     enabled: true,
-    repo: "hyulevo653/my-profile", // Thay bằng repo của bạn
-    repoId: "R_kgDOQQR_xg", // Thay bằng data-repo-id lấy từ giscus.app
+    repo: "hyulevo653/my-profile",
+    repoId: "R_kgDOQQR_xg",
     category: "General",
-    categoryId: "DIC_kwDOQQR_xs4C_Q6k", // Thay bằng data-category-id lấy từ giscus.app
+    categoryId: "DIC_kwDOQQR_xs4C_Q6k",
   },
 }
