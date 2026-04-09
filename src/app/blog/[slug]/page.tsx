@@ -1,12 +1,12 @@
 import AppLayout from '@/components/AppLayout';
-import {getPostData} from '@/lib/posts';
-import {FiArrowLeft} from 'react-icons/fi';
+import { getPostData } from '@/lib/posts';
+import { FiArrowLeft } from 'react-icons/fi';
 import Script from 'next/script';
-import {AppConfig} from '@/config/app.config';
+import { AppConfig } from '@/config/app.config';
 import PostPictures from '@/app/blog/[slug]/PostPictures';
 import Markdown from 'react-markdown';
-import {PrismLight as SyntaxHighlighter} from 'react-syntax-highlighter';
-import {darcula} from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { darcula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
 import scss from 'react-syntax-highlighter/dist/cjs/languages/prism/scss';
@@ -15,7 +15,7 @@ import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown
 import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json';
 import lua from 'react-syntax-highlighter/dist/cjs/languages/prism/lua';
 import CopyCodeButton from '@/app/blog/[slug]/CopyCodeButton';
-import {Metadata} from 'next';
+import { Metadata } from 'next';
 
 SyntaxHighlighter.registerLanguage('tsx', tsx);
 SyntaxHighlighter.registerLanguage('typescript', typescript);
@@ -30,7 +30,7 @@ interface PostContentProps {
 }
 
 export async function generateMetadata(
-  {params}: PostContentProps,
+  { params }: PostContentProps,
 ): Promise<Metadata> {
   const slug = (await params).slug;
   const post = await getPostData(slug);
@@ -45,13 +45,13 @@ export async function generateMetadata(
   };
 }
 
-export default async function PostContent({params}: PostContentProps) {
+export default async function PostContent({ params }: PostContentProps) {
   const slug = (await params).slug;
   const post = await getPostData(slug);
   return <AppLayout>
     <div className={'p-4 bg-white border-b w-full'}>
       <a href={'/'} className={'flex flex-row gap-1 items-center text-[12px] mb-4 cursor-pointer hover:text-primary'}>
-        <FiArrowLeft/> Go Back
+        <FiArrowLeft /> Go Back
       </a>
       <div className={'font-bold text-xl'}>
         {post.title}
@@ -61,12 +61,12 @@ export default async function PostContent({params}: PostContentProps) {
       </div>
     </div>
     <div className={'w-full'}>
-      <PostPictures post={post}/>
+      <PostPictures post={post} />
     </div>
     <Markdown
       className={'text-[14px] bg-white p-4 my-4 border-y leading-relaxed post-content'}
       components={{
-        code({inline, className, ...props}) {
+        code({ inline, className, ...props }) {
           const hasLang = /language-(\w+)/.exec(className || '');
           return !inline && hasLang ? (
             <SyntaxHighlighter
@@ -86,7 +86,7 @@ export default async function PostContent({params}: PostContentProps) {
         pre(pre) {
           const code = (pre as any).node.children[0].children[0].value as string;
           return <div className="relative">
-            <CopyCodeButton code={code}/>
+            <CopyCodeButton code={code} />
             <pre {...pre}></pre>
           </div>;
         }
@@ -94,17 +94,17 @@ export default async function PostContent({params}: PostContentProps) {
     >
       {post.content}
     </Markdown>
-    {/* {AppConfig.giscusEnabled && (
+    {AppConfig.giscus.enabled && (
       <>
         <div className={'border-t bg-white p-4'}>
           <div className={'giscus'}></div>
         </div>
         <Script
           src="https://giscus.app/client.js"
-          data-repo="monokaijs/onlyfans-profile"
-          data-repo-id="R_kgDONcB6-A"
-          data-category="General"
-          data-category-id="DIC_kwDONcB6-M4ClJOr"
+          data-repo={AppConfig.giscus.repo}
+          data-repo-id={AppConfig.giscus.repoId}
+          data-category={AppConfig.giscus.category}
+          data-category-id={AppConfig.giscus.categoryId}
           data-mapping="pathname"
           data-strict="0"
           data-reactions-enabled="1"
@@ -115,6 +115,6 @@ export default async function PostContent({params}: PostContentProps) {
           async
         />
       </>
-    )} */}
+    )}
   </AppLayout>;
 }

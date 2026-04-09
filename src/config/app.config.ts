@@ -29,7 +29,7 @@ export const AppConfig = {
         {
           name: "Smart Bot",
           description:
-      "A centralized platform for managing and operating automation bots across multiple social media platforms, enabling account management, scenario-based execution, AI-generated content, and real-time notifications.",
+            "A centralized platform for managing and operating automation bots across multiple social media platforms, enabling account management, scenario-based execution, AI-generated content, and real-time notifications.",
           techStack: [
             "Angular",
             "AI / LLM Integration",
@@ -192,5 +192,11 @@ export const AppConfig = {
       description: "NodeJS, Loopback,Java backend. Experience with MySQL, Docker, and Kubernetes deployment.",
     },
   ],
-  giscusEnabled: true,
+  giscus: {
+    enabled: true,
+    repo: "hyulevo653/my-profile", // Thay bằng repo của bạn
+    repoId: "R_kgDOQQR_xg", // Thay bằng data-repo-id lấy từ giscus.app
+    category: "General",
+    categoryId: "DIC_kwDOQQR_xs4C_Q6k", // Thay bằng data-category-id lấy từ giscus.app
+  },
 }
